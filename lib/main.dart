@@ -73,15 +73,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
-              keyboardType: TextInputType.number,
+              keyboardType: TextInputType.numberWithOptions(decimal: true),
               onChanged: (value) {
                 setState(() {
                   _amount = double.parse(value);
                 });
               },
-              decoration: InputDecoration(
-                labelText: '円を入力',
-              ),
+              decoration: InputDecoration(labelText: '円を入力', prefixText: '¥'),
             ),
             SizedBox(height: 80),
             DropdownButton(
